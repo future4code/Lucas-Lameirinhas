@@ -55,7 +55,7 @@ return maior
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
   const quantidadeDeElementos = array
-  return quantidadeDeElementos.length()
+  return quantidadeDeElementos.length
 }
 
 // EXERCÍCIO 06
@@ -76,7 +76,11 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-  
+  let array = []
+  for(let i=0; i<n ; i++){
+    array.push(2*i)
+  }
+  return array
 }
 
 // EXERCÍCIO 08
@@ -95,6 +99,7 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
+ 
   // Formato do objeto a ser retornado:
   // {
   //   maiorNumero: X,
