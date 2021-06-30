@@ -1,0 +1,47 @@
+h1 {
+    color:rgb(196, 110, 4);
+    background-color: rgba(70, 167, 206, 0.479);
+    display: block;
+    border: 3px solid black;
+    margin: 25px 250px;
+    padding: 5px 5px 10px 10px
+}
+p {
+    color:black;
+    background-color: rgba(70, 167, 206, 0.479);
+    display: inline-block;
+    border: 5px solid rgba(255, 166, 0, 0.63);
+    margin: 10px 250px;
+    padding: 5px 5px 10px 10px
+}
+.texto-chamativo {
+    color:black;
+    border: 2px solid black;
+    padding: 5px 5px 10px 10px
+}
+
+
+.separa-espaco{
+    margin: 20px 250px;
+    border: 2px dotted black;
+    padding: 1px 1px 1px 1px;
+    display: inline-block;
+    background-color: rgba(255, 140, 0, 0.534);
+    padding: 1px 1px 2px 2px;
+    
+}
+#diminui-imagens{
+    margin: 20px 250px;
+    border: 3px solid black;
+    background-color: rgba(255, 140, 0, 0.534);
+    padding: 5px 5px 10px 10px;
+    display: block
+    
+}
+.container-img {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+    padding: 1px 1px 2px 2px
+}
