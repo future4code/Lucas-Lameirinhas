@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.div-do-header {
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+    padding: 20px;
+    color:rgb(92, 12, 167)
+}
+
+.div-do-footer {
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+    padding: 20px;
+    color: blanchedalmond;
+    grid-column: 1 / -1;
+    
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 80vh;
+    max-width: 100vw;
+    column-gap: 10px;
+    margin: 20px;
+    overflow: auto;
+}
+
+
+.video-tamanho{
+    width: 220px;
+    height: 218px;
+    
+}
+
+.card-do-video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.video-tela-cheia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content:space-between;
+    
+}
+
+.tamanho-padrao-video{
+    height: 95vh;
+    width: 95vw;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    main {
+        grid-template-columns: 1fr;
+        
+        
+    }
+    
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    main {
+        grid-template-columns: 1fr;
+        
+        
+    }
+}
