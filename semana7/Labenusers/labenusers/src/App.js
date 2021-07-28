@@ -1,84 +1,41 @@
+import axios from "axios"
 import React from "react";
-import axios from "axios";
+import TelaCadastro from "./components/TelaCadastro"
+import TelaListaUsuarios from "./components/TelaListaUsuarios"
 
-const url =
-  "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 
-const headers = {
-  headers: {
-    Authorization: "lucas-lameirinhas-lovelace"
-  }
-};
 
 export default class App extends React.Component {
   state = {
-    lista: [],
-    inputNome: "",
-    inputEmail: ""
-  };
-
-  componentDidMount() {
-    this.pegarPlaylists();
+    telaAtual: "cadastro"
   }
 
-  mudaInputNome = (e) => {
-    this.setState({ inputNome: e.target.value });
-  };
+  escolheTela = () => {
+    switch (this.state.telaAtual){
+      case "cadastro":
+        return <TelaCadastro irParaLista={this.irParaLista}/>
+      case "lista":
+        return <TelaListaUsuarios irParaCadastro={this.irParaCadastro}/> 
+      default:
+        return <div>Página não encontrada!</div> 
+    }
 
-  mudaInputEmail = (e) => {
-    this.setState({ inputEmail: e.target.value });
-  };
+  }
 
-  pegarPlaylists = () => {
-    axios
-      .get(url, headers)
-      .then((res) => {
-        this.setState({ lista: res.data.result.list });
-      })
-      .catch((err) => {
-        alert(err.response);
-      });
-  };
+  irParaCadastro = () => {
+    this.setState({telaAtual: "cadastro"})
+  }
 
-  criarPlaylist = () => {
-    const body = {
-      id: "",
-      name: this.state.inputNome
-    };
-
-    axios
-      .post(url, body, headers)
-      .then((res) => {
-        alert("Usuario Adicionado");
-        this.setState({ inputNome: "" });
-        this.setState({ inputEmail: "" })
-        this.pegarPlaylists();
-      })
-      .catch((err) => {
-        alert(err.response.data.message);
-      });
-  };
+  irParaLista = () => {
+    this.setState({telaAtual: "lista"})
+  }
 
   render() {
-    const componentesListaUsuarios = this.state.lista.map((play) => {
-      return <li key={play.id}>{play.name}</li>;
-    });
-
     return (
       <div>
-        <h1>LabenUsers</h1>
-        <input
-          value={this.state.inputNome}
-          onChange={this.mudaInputNome}
-        />
-        <input
-          value={this.state.inputEmail}
-          onChange={this.mudaInputEmail}
-        />
-        <button onClick={this.criarPlaylist}>Enviar</button>
-        {componentesListaUsuarios}
+        {this.escolheTela()}
       </div>
-    );
+    )
   }
 }
 
