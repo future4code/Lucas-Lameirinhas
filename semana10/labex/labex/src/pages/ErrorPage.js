@@ -1,9 +1,9 @@
 import React from "react"
 
-export const CreateTripPage = () => {
+export const ErrorPage = () => {
     return (
         <div>
-            <p>Create Trip Page</p>
+            <p>Error Page</p>
         </div>
     )
 }
