@@ -1,9 +1,12 @@
-import React from "react"
+import axios from 'axios'
+import React from 'react'
+
+
+const BASE_URL = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/lucas-lameirinhas-lovelace`
 
 export const CreateTripPage = () => {
+
     return (
-        <div>
-            <p>Create Trip Page</p>
-        </div>
+       <p>CreateTripPage</p>
     )
 }

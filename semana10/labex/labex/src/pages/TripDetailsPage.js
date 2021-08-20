@@ -1,9 +1,11 @@
-import React from "react"
+import React from 'react'
+
+const BASE_URL = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/lucas-lameirinhas-lovelace`
 
 export const TripDetailsPage = () => {
+    
     return (
-        <div>
-            <p>Trip Details Page</p>
-        </div>
+
+        <p>TripDetailsPage</p>
     )
 }
