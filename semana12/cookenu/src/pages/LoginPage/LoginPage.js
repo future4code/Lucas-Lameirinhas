@@ -1,69 +1,30 @@
 import React from "react"
-import { LogoImage, ScreenContainer, InputsContainer, SignUpButtonContainer } from "./styled"
+import { ScreenContainer, LogoImage, SignUpButtonContainer } from "./styled"
 import logo from "../../assets/logo.png"
-import { Button, TextField } from "@material-ui/core"
-import useForm from '../../hooks/useForm'
-import { primaryColor } from "../../constants/colors"
-import { goToSignUp } from "../../routes/coordinator"
-import { useHistory } from "react-router"
+import Button from '@material-ui/core/Button'
+import LoginForm from "./LoginForm"
+import { useHistory } from 'react-router-dom'
+import {goToSignUp} from "../../routes/coordinator"
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
-const LoginPage = () => {
-    const [form, onChange, clear] = useForm({email:"", password:""})
-    
-    const onSubmitForm = (event) => {
-        event.preventDefault()
-    }
-
+const LoginPage = ({setRightButtonText}) => {
+    useUnprotectedPage()
     const history = useHistory()
-
     return (
         <ScreenContainer>
-            <LogoImage src={logo}/>
-            <InputsContainer>
-                <form onSubmit={onSubmitForm}>
-                    <TextField
-                        name={"email"}
-                        value={form.email}
-                        onChange={onChange}
-                        label={"E-mail"}
-                        variant={"outlined"}
-                        fullWidth
-                        margin={"dense"}
-                        required
-                        type={"email"}
-                        />
-                    <TextField
-                        name={"password"}
-                        value={form.password}
-                        onChange={onChange}
-                        label={"Senha"}
-                        variant={"outlined"}
-                        fullWidth
-                        margin={"dense"}
-                        required
-                        type={"password"}
-                        />   
-
-                    <Button
-                        type={"submit"}
-                        fullWidth
-                        variant={"contained"}
-                        color={primaryColor}
-                    >Login</Button>     
-
-                </form>
-            </InputsContainer>
-
+            <LogoImage src={logo} />
+            <LoginForm setRightButtonText={setRightButtonText}/>
             <SignUpButtonContainer>
-            <Button
-                        type={"submit"}
-                        fullWidth
-                        variant={"text"}
-                        color={primaryColor}
-                        onClick={() => goToSignUp(history)}
-                    >Cadastre-se</Button> 
+                <Button
+                    onClick={() => goToSignUp(history)}
+                    type={"submit"}
+                    fullWidth
+                    variant={"text"}
+                    color={"primary"}
+                >
+                    Não possui conta? Cadastre-se
+                    </Button>
             </SignUpButtonContainer>
-            
         </ScreenContainer>
     )
 }
