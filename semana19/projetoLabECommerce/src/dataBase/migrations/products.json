@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "Tablet",
+        "description": "AOC",
+        "price": 1500
+    },
+    {
+        "id": "2",
+        "name": "viagem de onibus",
+        "description": "viagem de onibus para itanhaem",
+        "price": 1000,
+        "travel_origin": "São Paulo",
+        "travel_destination": "Itanhaem"
+    }
+]
